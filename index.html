@@ -261,21 +261,7 @@
         var isRaplaced = false;
 
         var afterFormInitCallback2 = function () {
-          if (isRaplaced) return;
-          var titles = Array.from(
-            shadowRootFormElement.querySelectorAll(".ra3Ef4") || []
-          );
-          var isRequestCash = titles.some(
-            (title) => title.innerText === "Request Cash"
-          );
-          if (isRequestCash) {
-            isRaplaced = true;
-            var oldButton =
-              shadowRootFormElement.querySelector("#id_button_submit");
-            var newButton = oldButton.cloneNode(true);
-            oldButton.parentNode.replaceChild(newButton, oldButton);
-            newButton.addEventListener("click", lastStepCallback);
-          }
+         
         };
 
         var observer2 = new MutationObserver(afterFormInitCallback2);
